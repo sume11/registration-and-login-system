@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Form</title>
+        <link rel="stylesheet" href="styles/login.css">
+  
+    </head>
+    <body>
+<div class="container">
+    <form action="php/login.php" method="POST" onsubmit="return validateLogin()">
+        <h2>Login Form</h2>
+        <label  for="username ">Username:</label>
+        <input  id="username" type="text"  name="username" required>
+        <label for="password">Password:</label>
+        <input id="password" type="password" name="password" required><br><br>
+        
+        <button type="submit" class="log-btn" >Login</button>
+        <button type="reset" class="clear-btn">Clear</button><br><br>
+       <a href="registration.html" class="create-link">Create new account</a>
+    </form>  
+</div>
+  <script>
+    function validateLogin() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    if (username === "" || password === "") {
+        alert("All fields required!");
+        return false;
+    }
+    return true;
+}
+</script>
+    </body>
+</html>
